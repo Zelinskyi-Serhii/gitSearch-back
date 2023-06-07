@@ -1,6 +1,6 @@
 # gitSearch-back
 
-####Welcome to gitSearch-back! This is the backend application for a GitHub user search system. It provides an API that interacts with the GitHub API to retrieve user information.
+#### Welcome to gitSearch-back! This is the backend application for a GitHub user search system. It provides an API that interacts with the GitHub API to retrieve user information.
 
 ## This app allow you find information about user on GitHub.
 
