@@ -3,7 +3,7 @@
 const axios = require('axios');
 import { calculateLanguagePercentage } from "../helpers/calculateLanguagePercentage";
 import { calculateRepoStatistics } from "../helpers/calculateRepoStatistics";
-import { formaDate } from "../helpers/formatedDate";
+import { formatDate } from "../helpers/formatedDate";
 import { getAllRepositories } from "../helpers/getAllRepositories";
 
 const getAllInformation = async (username: string, accessToken: string) => {
@@ -49,7 +49,7 @@ const getShortInfoByNickName = async (username: string, accessToken: string) => 
 
     const userData = response.data;
     const nickname = userData.login;
-    const created_at = formaDate(userData.created_at);
+    const created_at = formatDate(userData.created_at);
     const totalPublicRepositories = userData.public_repos;
 
     const userObject = {

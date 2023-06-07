@@ -40,6 +40,6 @@ export const getAllRepositories = async(username: string, accessToken: string) =
 
     return repositoriesList;
   } catch {
-    console.log('Failed to fetch repositories data');
+    throw new Error('Failed to fetch repositories data');
   }
 }
