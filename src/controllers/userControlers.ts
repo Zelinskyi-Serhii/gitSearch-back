@@ -17,9 +17,15 @@ const getByNickName = async(req: Request, res: Response) => {
     return;
   }
 
-  const foundHero = await UserServices.getAllInformation(nickName, ACCESS_TOKEN);
+  const foundUser = await UserServices.getAllInformation(nickName, ACCESS_TOKEN);
 
-  res.send(foundHero);
+  if (!foundUser) {
+    res.sendStatus(404);
+
+    return;
+  }
+
+  res.send(foundUser);
 };
 
 const getShortInfoByNickName = async(req: Request, res: Response) => {
@@ -31,15 +37,15 @@ const getShortInfoByNickName = async(req: Request, res: Response) => {
     return;
   }
 
-  const foundHero = await UserServices.getShortInfoByNickName(nickName, ACCESS_TOKEN);
+  const foundUser = await UserServices.getShortInfoByNickName(nickName, ACCESS_TOKEN);
 
-  if (!foundHero) {
+  if (!foundUser) {
     res.sendStatus(404);
 
     return;
   }
 
-  res.send(foundHero);
+  res.send(foundUser);
 };
 
 export default {
